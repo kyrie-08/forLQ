@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+    long long n;
+    long long sum=0;
+    scanf("%lld",&n);
+    for(long long i=1;i<=n;i++){
+        long long t=i;
+        while(t!=0){
+            if(t%10==0||t%10==1||t%10==2||t%10==9){
+                sum+=i;//此处加的是i值，因为t值处于变化中
+                break;//while中需要用break退出循环否则会继续让符合条件的t/10
+            }
+            t/=10;
+        }
+    }
+    printf("%lld",sum);
+}
